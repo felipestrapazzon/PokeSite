@@ -1,0 +1,427 @@
+@import url('fonts.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Flexo';
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.colorTop {
+
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: #313131;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1.2;
+    transition: all 0.25s ease-in-out;
+}
+
+.navbar ul li a i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.homenav {
+
+    border-bottom: #D9AE30 5px solid;
+    border-radius: 0px 0px 0px 5px;
+}
+
+.homenav:hover {
+
+    background-color: #D9AE30;
+    color: white;
+}
+
+.pokenav {
+
+    border-bottom: #E3340C 5px solid;
+
+}
+
+.pokenav:hover {
+
+    background-color: #E3340C;
+    color: white;
+}
+
+.jogonav {
+
+    border-bottom: #4BA651 5px solid;
+    
+}
+
+.jogonav:hover {
+
+    background-color: #4BA651;
+    color: white;
+}
+
+.compnav {
+
+    border-bottom: #6890F0 5px solid;
+    border-radius: 0px 0px 5px 0px;
+}
+
+.compnav:hover {
+
+    background-color: #6890F0;
+    color: white;
+}
+
+.IdPoke {
+
+    font-family: 'Flexo';
+
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 20px 0;
+    width: 300px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+.pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10%;
+
+}
+
+.pokemon-card {
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    cursor: pointer;
+    flex: 0 1 calc(25% - 20px);
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+.pokemon-card:hover {
+    animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+        /* Sobe 10px */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Volta à posição original */
+    }
+}
+
+.pokemon-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #F2F2F2;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.pokemon-card h2 {
+    font-size: 23px;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+    text-transform: capitalize;
+}
+
+.pokemon-card h2,
+p {
+
+    margin-left: 10px;
+    text-align: left;
+}
+
+.pokemon-card .pokemon-id {
+    font-size: 14px; /* Tamanho da fonte */
+    color: #A0A0A0; /* Cor do texto */
+    font-weight: bold; /* Negrito */
+}
+
+.pokemon-card .types {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.pokemon-card .type {
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+
+.type-Planta {
+    background-color: #78C850;
+    color: black;
+
+}
+
+.type-Inseto {
+    background-color: #529132;
+    color: white;
+}
+
+.type-Normal {
+    background-color: #777777;
+    color: white;
+}
+
+.type-Venenoso {
+    background-color: #A040A0;
+    color: white;
+}
+
+.type-Fogo {
+    background-color: #F08030;
+    color: #fff;
+}
+
+.type-Água {
+    background-color: #6890F0;
+    color: white;
+}
+
+.type-Elétrico {
+    background-color: #f0e768;
+    color: black;
+}
+
+.type-Terra {
+    background-color: #877239;
+    color: white;
+}
+
+.type-Fada {
+    background-color: #f874ff;
+    color: white;
+}
+
+.type-Lutador {
+    background-color: #cf4b1f;
+    color: white;
+}
+
+.type-Psíquico {
+    background-color: #ff00f2;
+    color: white;
+}
+
+.type-Pedra {
+    background-color: #c5a244;
+    color: white;
+}
+
+.type-Fantasma {
+    background-color: #622393;
+    color: white;
+}
+
+.type-Gelo {
+    background-color: #9be3ff;
+    color: white;
+}
+
+.type-Dragão {
+    background: rgb(14, 0, 255);
+    background: linear-gradient(180deg, rgba(14, 0, 255, 1) 0%, rgba(115, 0, 255, 1) 10%, rgba(255, 0, 0, 1) 100%);
+    color: white;
+}
+
+/* Estilos principais do container de pesquisa */
+.search-container {
+    display: flex;
+    background-color: #313131;
+    /* Cor de fundo escura */
+    align-items: flex-end;
+    padding: 20px;
+    color: #fff;
+}
+
+.search-box {
+    display: flex;
+    flex-direction: column;
+    /* Empilha elementos */
+    align-items: flex-start;
+    /* Alinha os itens à esquerda */
+    margin-right: 20px;
+}
+
+.search-box label {
+    font-size: 22px;
+    margin-right: 15px;
+    color: #d3d3d3;
+    float: left;
+}
+
+
+.search-input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+    width: 250px;
+    font-size: 16px;
+    color: #333;
+    margin-right: 10px;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+#search-btn {
+    background-color: #DA471B;
+    /* Laranja */
+    border: none;
+    border-radius: 6px;
+    padding: 11px 15px;
+    cursor: pointer;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#search-btn i {
+    color: white;
+    /* Cor da lupa branca */
+    font-size: 20px;
+
+
+}
+
+.search-info {
+    max-width: 400px;
+}
+
+.search-info p {
+    font-size: 14px;
+    color: #c3e6cc;
+    /* Verde claro */
+    margin-bottom: 8px;
+}
+
+.topoPoke {
+
+    background-color: #616161;
+    padding: 20px;
+    margin-bottom: 100px;
+}
+
+.meiPoke {
+
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 40px;
+    background-color: #616161;
+    border-radius: 15px;
+    color: white;
+}
+
+.fundoCards {
+
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+.load-more-button {
+    display: block;
+    margin: 70px auto; 
+    padding: 10px 20px; 
+    background-color: #ff0000; 
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Flexo';
+    font-weight: bold;
+}
+
+.load-more-button:hover {
+    background-color: #6890F0;
+}
+
+
+
+
+
+
+
+/* Estilo para quando a tela é menor DO POKEDEX CARDS */
+@media (max-width: 1022px) {
+    .pokemon-card {
+        flex: 0 1 calc(33% - 20px); /* 100% da largura para telas ainda menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .pokemon-card {
+        flex: 0 1 calc(50% - 20px); /* 50% da largura para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .pokemon-card {
+        flex: 0 1 calc(99.9999999% - 20px); /* 100% da largura para telas ainda menores */
+    }
+}

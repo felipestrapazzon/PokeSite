@@ -1,0 +1,453 @@
+@import url('fonts.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Flexo';
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.colorTop {
+
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: #313131;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 1.2;
+    transition: all 0.25s ease-in-out;
+}
+
+.navbar ul li a i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.homenav {
+
+    border-bottom: #D9AE30 5px solid;
+    border-radius: 0px 0px 0px 5px;
+}
+
+.homenav:hover {
+
+    background-color: #D9AE30;
+    color: white;
+}
+
+.pokenav {
+
+    border-bottom: #E3340C 5px solid;
+
+}
+
+.pokenav:hover {
+
+    background-color: #E3340C;
+    color: white;
+}
+
+.jogonav {
+
+    border-bottom: #4BA651 5px solid;
+}
+
+.jogonav:hover {
+
+    background-color: #4BA651;
+    color: white;
+}
+
+.compnav {
+
+    border-bottom: #6890F0 5px solid;
+    border-radius: 0px 0px 5px 0px;
+}
+
+.compnav:hover {
+
+    background-color: #6890F0;
+    color: white;
+}
+
+.IdPoke {
+
+    font-family: 'Flexo';
+
+}
+
+.spaccingTT{
+
+    margin-top: 100px;
+}
+
+a {
+
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+.col-6 {
+    flex: 0 0 50%; /* Cada coluna ocupa 50% da largura */
+    padding: 10px; /* Espaçamento interno */
+}
+
+
+/* Container principal para os detalhes do Pokémon */
+
+
+.pokemon-details {
+    
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+/* Cabeçalho com navegação */
+.pokemon-header {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Margem inferior */
+}
+
+/* Navegação de Pokémon */
+.pokemon-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5%;
+    margin-bottom: 15px;
+    background-color: #A4A4A4;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+
+.pokemon-ancor-div {
+
+    padding: 25px;
+    background-color: #A4A4A4;
+    color: white;
+    border-radius: 100px;
+    transition: all 0.2s ease-in-out;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.pokemon-ancor-div:hover {
+
+    padding: 25px;
+    background-color: #30A7D7;
+    border-radius: 100px;
+    
+}
+
+.pokemon-ancor-div.empty {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.pokemon-name-nav {
+
+    color: #616161;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.fa-chevron-right {
+
+    padding: 7px;
+    border-radius: 200px;
+    background-color: #fff;
+    color: #616161;
+    font-size: smaller;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.fa-chevron-left {
+
+    padding: 7px;
+    border-radius: 200px;
+    background-color: #fff;
+    color: #616161;
+    font-size: smaller;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Nome do Pokémon */
+.pokemon-name {
+    font-size: 36px; 
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: 'Flexo' Normal;
+    
+}
+
+.cor-trade {
+
+    color: rgba(0, 0, 0, 0.547);
+}
+
+/* Imagem do Pokémon */
+.pokemon-image {
+    width: 100%; 
+    height: auto; 
+    object-fit: contain; 
+    border-radius: 5px; 
+    background-color: #F2F2F2;
+    align-items: center;
+    display: flex;
+    
+}
+
+.pokemon-img-dad {
+    display: flex;
+    justify-content: center; /* Centraliza a imagem horizontalmente */
+    align-items: flex-start;
+    
+}
+
+/* Container para informações do Pokémon */
+.pokemon-img-info {
+    margin: 10%;
+    display: flex; /* Flexbox para layout */
+    flex-direction: row;
+    margin-top: 100px;
+}
+
+.pokemon-info {
+
+    flex-direction: column;
+    display: flex;
+}
+
+/* Descrição do Pokémon */
+.pokemon-description {
+    font-size: 16px; /* Tamanho da fonte */
+    margin-bottom: 35px; /* Margem inferior */
+    
+}
+
+.pokemon-description h3 {
+
+    font-size: 32px;
+}
+
+
+/* Estatísticas do Pokémon */
+.pokemon-stats {
+    display: flex; /* Flexbox para alinhamento */
+    gap: 30px; /* Espaço entre os elementos */
+    margin-bottom: 35px; /* Margem inferior */
+    padding: 50px;
+    float: right;
+    border-radius: 10px;
+    background-color: #30A7D7;
+    flex-direction: column;
+}
+
+.pokemon-tittle-stats {
+
+    color: white;
+    font-weight: bold;
+}
+
+/* Seção das estatísticas */
+.pokemon-stats-section {
+    text-align: left; 
+}
+
+/* Tipos do Pokémon */
+.pokemon-types {
+    display: flex; /* Flexbox para alinhamento */
+    flex-direction: column;
+    margin-bottom: 35px;
+}
+
+.pokemon-types h3{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    
+}
+
+/* Estilo para cada tipo */
+.pokemon-type {
+    padding: 8px 12px; /* Aumenta o espaçamento interno para um pouco maior */
+    border-radius: 5px; /* Bordas arredondadas */
+    color: #fff; /* Texto branco */
+    margin: 0 5px; /* Margens laterais */
+    text-transform: capitalize; /* Letras maiúsculas */
+    display: inline-block; /* Faz as divs ocuparem apenas o espaço necessário */
+    min-width: 70px; /* Define uma largura mínima para as caixinhas */
+    text-align: center; /* Alinha o texto ao centro */
+    width: 25%;
+    
+}
+
+.pokemon-types .pokemon-types-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Tipos específicos */
+.type-normal {
+    background-color: #A8A878;
+}
+
+.type-fire {
+    background-color: #F08030;
+}
+
+.type-water {
+    background-color: #6890F0;
+}
+
+.type-electric {
+    background-color: #F8D030;
+    color: black;
+}
+
+.type-grass {
+    background-color: #78C850;
+}
+
+.type-ice {
+    background-color: #98D8D8;
+    color: black;
+}
+
+.type-fighting {
+    background-color: #C03028;
+}
+
+.type-poison {
+    background-color: #A040A0;
+}
+
+.type-ground {
+    background-color: #E0C068;
+}
+
+.type-flying {
+    background-color: #A890F0;
+}
+
+.type-psychic {
+    background-color: #F85888;
+}
+
+.type-bug {
+    background-color: #A8B820;
+}
+
+.type-rock {
+    background-color: #B8A038;
+}
+
+.type-ghost {
+    background-color: #705898;
+}
+
+.type-dragon {
+    background: rgb(14, 0, 255);
+    background: linear-gradient(180deg, rgba(14, 0, 255, 1) 0%, rgba(115, 0, 255, 1) 10%, rgba(255, 0, 0, 1) 100%);
+    color: white;
+}
+
+.type-dark {
+    background-color: #705848;
+}
+
+.type-steel {
+    background-color: #B8B8D0;
+}
+
+.type-fairy {
+    background-color: #EE99AC;
+}
+
+
+
+/* Fraquezas do Pokémon */
+.pokemon-weaknesses {
+    display: flex; /* Flexbox para alinhamento */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    text-transform: capitalize;
+    flex-direction: column;
+}
+
+.pokemon-weaknesses h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 25px; /* Espaçamento entre o título e os tipos */
+}
+
+.pokemon-weaknesses-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Estilo para fraquezas */
+.pokemon-weakness {
+    background-color: #f8d5a3; /* Amarelo claro */
+    padding: 8px 13px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin: 0 5px; /* Margem */
+    width: 25%;
+    text-align: center;
+}
+
+.pokemon-button-back {
+
+    padding: 10px;
+    background-color: #C03028;
+    font-size: 22px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.pokemon-button-back:hover {
+
+    background-color: #30A7D7;
+    color: white;
+}

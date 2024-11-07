@@ -1,0 +1,249 @@
+@import url(../css/fonts.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    background-color: #313131;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 900px; /* Tamanho fixo do contêiner para manter a proporção */
+    height: 600px; /* Altura correspondente ao tamanho da imagem de fundo */
+    background-image: url("../img/BATTLE-BG-POKEMON.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px;
+    overflow: visible; /* Para garantir que os ataques sejam visíveis */
+}
+
+.pokemon {
+    text-align: center;
+    position: absolute;
+}
+
+/* Player 1 (seu Pokémon) */
+#player-pokemon {
+    left: 20%;  
+    bottom: 8%;
+}
+
+/* Player 2 (Pokémon inimigo) */
+#bot-pokemon {
+    right: 23%;
+    bottom: 42%;
+}
+
+.sprite-player {
+    
+    width: 400%;
+}
+
+.sprite-bot {
+    
+    width: 150%;
+}
+
+.health-bar {
+    background-color: red; /* Cor da barra de fundo */
+    width: 200px;
+    height: 30px;
+    position: relative;
+    border-radius: 5px;
+    display: inline-block; /* Mantém a barra ao lado do texto HP */
+    margin-right: 10px; /* Espaço entre a barra de vida e o texto */
+}
+
+.health {
+    background-color: #58D15C; /* Cor da barra de vida */
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.health-text {
+    color: rgb(255, 204, 0); /* Cor do texto HP */
+    font-weight: bold;
+    font-size: 26px;
+    vertical-align: top;
+    display: inline-block;
+    font-family: 'Flexo', sans-serif;
+    margin-right: 10px;
+}
+
+.hp-lifes-infos {
+
+    background-color: #313131; /* Fundo cinza escuro */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    display: inline-block; /* Ajusta o tamanho ao conteúdo */
+}
+
+#moves {
+    position: relative; /* Removido absolute para manter abaixo do título */
+    bottom: 0; /* Não precisa mais desse valor */
+    left: 0;
+    display: flex;
+    justify-content: center; /* Centraliza os botões no container */
+    flex-direction: row; /* Alinha horizontalmente */ /* Espaço entre os botões */
+}
+
+/* Ataques do Player 2 - abaixo do título */
+#moves-bot {
+    position: relative; /* Removido absolute para manter abaixo do título */
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center; /* Centraliza os botões no container */
+    flex-direction: row; /* Alinha horizontalmente */
+
+}
+
+
+button {
+    padding: 10px;
+    background-color: #C82609;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin: 0px 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+button:hover {
+    background-color: #ffffff;
+    color: #C82609;
+}
+
+button:active {
+
+    animation: bounce 0.1s ease;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+        /* Sobe 10px */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Volta à posição original */
+    }
+}
+
+.tittle {
+    width: 100%; 
+    max-width: 800px;
+    margin: 0 auto; 
+    text-align: right;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-family: 'Flexo', sans-serif;
+}
+
+h2 {
+    color: #313131;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+
+/* Estilo do card de informações do Pokémon */
+.pokemon-card {
+    position: absolute;
+    width: 320px;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    padding-top: 0px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card do Player 1 - esquerda e em cima */
+#card-player {
+    bottom: -50px; /* Alinhado na parte inferior */
+    right: -70px;  /* Alinhado à direita */
+}
+
+/* Card do Player 2 - esquerda e em cima (antes era direita e embaixo) */
+#card-bot {
+    top: 10px;    /* Alinhado na parte superior */
+    left: -70px;   /* Alinhado à esquerda */
+}
+
+/* Estilo para as pokébolas */
+.pokeballs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.pokeballs img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Adiciona estilo para os títulos de ataques */
+#moves, #moves-bot {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+.pokeball {
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.pokeball.fade-out {
+    opacity: 0;
+    transform: scale(0.5);
+    color: #C82609;
+}
+
+.attacks-p1 {
+    position: absolute;
+    bottom: -180px; /* Move os ataques para abaixo do card do Player 1 */
+    right: -50px;/* Alinha à direita */
+    display: block;
+    flex-direction: column;
+    text-align: left; /* Centraliza o texto */
+    font-family: 'Flexo', sans-serif;
+}
+
+.attacks-p2 {
+    position: absolute;
+    top: -120px; /* Move os ataques para a parte inferior */
+    left: -70px; /* Alinha à esquerda */
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Centraliza o texto */
+    font-family: 'Flexo', sans-serif;
+}

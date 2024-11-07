@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - PokéSite</title>
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="img/ICO.png" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a class="homenav" href="index.html"><i class="fas fa-home"></i><br>Home</a></li>
+            <li><a class="pokenav" href="pokedex.html"><i class="fas fa-dot-circle"></i><br>Pokédex</a></li>
+            <li><a class="jogonav" href="game/choice-deck.html"><i class="fas fa-gamepad"></i><br>Jogo</a></li>
+            <li><a class="compnav" href="game/comparation.html"><i class="fa-solid fa-dice-five"></i><br>Comparação</a></li>
+        </ul>
+    </nav>
+
+    <header class="site-header">
+        <div class="header-image">
+            <img src="img/HeaderIMG.jpg" alt="Pokémon" class="header-background">
+            <div class="overlay">
+                <h1 class="header-title">Bem-vindo ao Pokésite!</h1> <!-- Adicionada a classe "header-title" -->
+            </div>
+        </div>
+    </header>
+
+    <div class="spaccingTT"></div>
+
+    <section class="news-section">
+        <article class="news-article main-article">
+            <img src="img/NEWS MAIN.jpg" alt="Notícia Principal" class="news-image">
+            <h2 class="news-title">Notícia Principal: Novidades sobre Pokémon</h2>
+            <p class="news-content">
+                No mundo dos Pokémon, novas atualizações estão trazendo diversas novidades! Prepare-se para novas aventuras e desafios. Os treinadores devem estar prontos para explorar regiões desconhecidas, capturar Pokémon raros e participar de eventos especiais. As atualizações incluem novos Pokémon, melhorias no gameplay e muito mais. Fique atento para não perder nada!
+            </p>
+        </article>
+        
+        <div class="news-list">
+            <a href="https://www.adrenaline.com.br/games/nintendo/pokemon-home-2-0-sera-lancado-com-suporte-a-legends-arceus-e-brilliant-diamond-shining-pearl/" class="news-article orange-article">
+                <img src="img/POKEMONG GO.jpg" alt="Notícia 1" class="news-image">
+                <h3 class="news-title">Notícia 1: Lançamento de Pokémon GO 2.0</h3>
+            </a>
+    
+            <a href="https://gofest.pokemongolive.com/global?hl=pt_BR#:~:text=13%20e%2014%20de%20julho%20de%202024&text=Mais%20de%2070%20Pok%C3%A9mon%20aparecer%C3%A3o,em%20qualquer%20lugar%20do%20mundo." class="news-article blue-article">
+                <img src="img/REIDS.jpg" alt="Notícia 2" class="news-image">
+                <h3 class="news-title">Notícia 2: Evento Especial de Raids</h3>
+            </a>
+    
+            <a href="https://www.pokemythology.net/novos-pokemons/" class="news-article green-article">
+                <img src="img/GER IX.jpg" alt="Notícia 3" class="news-image">
+                <h3 class="news-title">Notícia 3: Novos Pokémon na Geração IX</h3>
+            </a>
+        </div>
+    </section>
+    
+    
+    <div class="spaccingTT"></div>
+    
+    <div class="tittle">
+        <h1>Principais Pokémons</h1>
+    </div>
+    <section class="slide-sec">
+        <div class="slider">
+            <div class="slides">
+                <!--APARECE AQUI OS BGLH-->
+            </div>
+            <div class="nav">
+                <button class="prev" onclick="moveSlide(-1)">❮</button>
+                <button class="next" onclick="moveSlide(1)">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="tittle"></div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Sobre Nós</h3>
+                <p>Somos apaixonados por Pokémon e dedicados a oferecer as melhores informações sobre cadabr<br> criatura deste incrível universo. Nosso objetivo é ajudar treinadores a entenderem melhor seus Pokémon e a se prepararem para qualquer desafio.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="pokedex.html">Pokédex</a></li>
+                    <li><a href="game/choice-deck.html">Jogo</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <ul>
+                    <li>Email: contato@pokemonworld.com</li>
+                    <li>Telefone: +55 11 98765-4321</li>
+                    <li>Endereço: Rua dos Pokémon, 123, Cidade Pokémon, Brasil</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pokémon World. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="js/slider.js"></script> <!-- Caminho para o JavaScript -->
+</body>
+
+</html>

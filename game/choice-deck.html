@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/deck.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="../img/ICO.png" type="image/x-icon">
+    <title>Escolher Deck - Player 1 e Player 2</title>
+    <style>
+        /* Adicione qualquer estilo CSS personalizado aqui, se necessário */
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="homenav" href="../index.html"><i class="fas fa-home"></i><br>Home</a></li>
+            <li><a class="pokenav" href="../pokedex.html"><i class="fas fa-dot-circle"></i><br>Pokédex</a></li>
+            <li><a class="jogonav" href="choice-deck.html"><i class="fas fa-gamepad"></i><br>Jogo</a></li>
+            <li><a class="compnav" href="comparation.html"><i class="fa-solid fa-dice-five"></i><br>Comparação</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <a href="#top" class="link-color">
+            <div class="arrow-top">
+                <i class="fa-solid fa-chevron-up"></i>
+            </div>
+        </a>
+
+        <a href="#confirm-button" class="link-color">
+            <div class="arrow-down">
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </a>
+
+        <div class="search-container">
+            <div class="search-box">
+                <label for="search-input">Nome ou número</label>
+                <input type="text" id="search" class="search-input" placeholder="" oninput="filterPokemon()">
+            </div>
+            <button type="submit" id="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <h1 id="player-title">Escolha o seu deck - Player 1</h1>
+
+        <!-- Lista de Pokémon -->
+        <div id="pokemon-list" class="pokemon-list"></div>
+
+        <!-- Pokémon Selecionados -->
+        <div id="selected-pokemons" class="selected-pokemons"></div>
+
+        <button id="confirm-button" class="button-confirm-deck" disabled>Confirmar Deck</button>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Sobre Nós</h3>
+                <p>Somos apaixonados por Pokémon e dedicados a oferecer as melhores informações sobre cada<br>
+                    criatura deste incrível universo. Nosso objetivo é ajudar treinadores a entenderem melhor seus
+                    Pokémon e a se prepararem para qualquer desafio.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pokedex.html">Pokédex</a></li>
+                    <li><a href="../game.html">Jogo</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <ul>
+                    <li>Email: contato@pokemonworld.com</li>
+                    <li>Telefone: +55 11 98765-4321</li>
+                    <li>Endereço: Rua dos Pokémon, 123, Cidade Pokémon, Brasil</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pokémon World. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentPlayer = 1;
+        let selectedPokemons = [];
+        const maxDeckSize = 3;
+        const pokemonListElement = document.getElementById('pokemon-list');
+        const selectedPokemonsElement = document.getElementById('selected-pokemons');
+        const confirmButton = document.getElementById('confirm-button');
+        const playerTitle = document.getElementById('player-title');
+        let allPokemons = []; // Armazena todos os Pokémon carregados
+
+        // Função para buscar Pokémons da API
+        async function fetchPokemons() {
+            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=493');
+            const data = await response.json();
+            const pokemons = data.results;
+
+            // Mapeia e busca os detalhes de cada Pokémon
+            const pokemonDetailsPromises = pokemons.map((pokemon, index) => fetchPokemonDetails(index + 1));
+
+            // Espera todos os detalhes dos Pokémon serem buscados
+            const pokemonDetailsArray = await Promise.all(pokemonDetailsPromises);
+
+            // Ordena os Pokémon pelo ID
+            pokemonDetailsArray.sort((a, b) => a.id - b.id);
+
+            // Armazena todos os Pokémon carregados
+            allPokemons = pokemonDetailsArray;
+
+            // Cria os cartões de Pokémon em ordem numérica
+            allPokemons.forEach(pokemonDetails => {
+                createPokemonCard(pokemonDetails);
+            });
+        }
+
+        // Função para buscar detalhes de cada Pokémon
+        async function fetchPokemonDetails(id) {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+            return response.json();
+        }
+
+        // Cria um cartão de Pokémon na lista
+        function createPokemonCard(pokemon) {
+            const card = document.createElement('div');
+            card.classList.add('pokemon-card');
+
+            // Obter os tipos de Pokémon
+            const types = pokemon.types.map(typeInfo => typeInfo.type.name);
+
+            // Cria os elementos de tipo
+            let typesHtml = '';
+            types.forEach(type => {
+                typesHtml += `<span class="type type-${type}">${type}</span>`;
+            });
+
+            card.innerHTML = `
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="${pokemon.name}">
+                <p class="pokemon-id">Nº ${String(pokemon.id).padStart(4, '0')}</p>
+                <h2>${pokemon.name}</h2>
+                <div class="types">
+                    ${typesHtml}  <!-- Aqui os tipos serão exibidos -->
+                </div>
+            `;
+
+            card.addEventListener('click', () => {
+                if (selectedPokemons.length < maxDeckSize) {
+                    addPokemonToDeck(pokemon);
+                } else {
+                    alert('Você já escolheu 3 Pokémons!');
+                }
+            });
+
+            pokemonListElement.appendChild(card);
+        }
+
+        // Adiciona Pokémon ao deck selecionado
+        function addPokemonToDeck(pokemon) {
+            selectedPokemons.push(pokemon);
+            updateSelectedPokemonsDisplay();
+
+            if (selectedPokemons.length === maxDeckSize) {
+                confirmButton.disabled = false;
+            }
+        }
+
+        // Atualiza a exibição dos Pokémon selecionados
+        function updateSelectedPokemonsDisplay() {
+            selectedPokemonsElement.innerHTML = '';
+            selectedPokemons.forEach(pokemon => {
+                const img = document.createElement('img');
+                img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+                selectedPokemonsElement.appendChild(img);
+            });
+        }
+
+        // Função para confirmar o deck e passar para o próximo jogador ou batalha
+        confirmButton.addEventListener('click', () => {
+            if (currentPlayer === 1) {
+                localStorage.setItem('player1Deck', JSON.stringify(selectedPokemons));
+                currentPlayer = 2;
+                selectedPokemons = [];
+                confirmButton.disabled = true;
+                updateSelectedPokemonsDisplay();
+                playerTitle.innerText = 'Escolha o seu deck - Player 2';
+            } else if (currentPlayer === 2) {
+                localStorage.setItem('player2Deck', JSON.stringify(selectedPokemons));
+                window.location.href = 'real-game.html';  // Redireciona para a batalha
+            }
+        });
+
+        // Função de filtro de Pokémon
+        function filterPokemon() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            pokemonListElement.innerHTML = '';
+
+            const filteredPokemons = allPokemons.filter(pokemon => {
+                const pokemonName = pokemon.name.toLowerCase();
+                const pokemonId = String(pokemon.id);
+                return pokemonName.includes(searchTerm) || pokemonId.includes(searchTerm);
+            });
+
+            filteredPokemons.forEach(pokemon => createPokemonCard(pokemon));
+        }
+
+        // Inicia o carregamento dos Pokémons
+        fetchPokemons();
+    </script>
+
+</body>
+
+</html>

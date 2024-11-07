@@ -1,0 +1,191 @@
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-HeavyIt.eot');
+    src: local('Flexo Heavy Italic'), local('Flexo-HeavyIt'),
+        url('../font/Flexo-Heavy.eot') format('embedded-opentype'), 
+        url('../font/Flexo-HeavyIt.woff2') format('woff2'),
+        url('../font/Flexo-HeavyIt.woff') format('woff'),
+        url('../font/Flexo-HeavyIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-ThinIt.eot');
+    src: local('Flexo Thin Italic'), local('Flexo-ThinIt'),
+        url('../font/Flexo-ThinIt.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-ThinIt.woff2') format('woff2'),
+        url('../font/Flexo-ThinIt.woff') format('woff'),
+        url('../font/Flexo-ThinIt.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-It.eot');
+    src: local('Flexo Italic'), local('Flexo-It'),
+        url('../font/Flexo-It.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-It.woff2') format('woff2'),
+        url('../font/Flexo-It.woff') format('woff'),
+        url('../font/Flexo-It.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-Light.eot');
+    src: local('Flexo Light'), local('Flexo-Light'),
+        url('../font/Flexo-Light.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-Light.woff2') format('woff2'),
+        url('../font/Flexo-Light.woff') format('woff'),
+        url('../font/Flexo-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-Heavy.eot');
+    src: local('Flexo Heavy'), local('Flexo-Heavy'),
+        url('../font/Flexo-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-Heavy.woff2') format('woff2'),
+        url('../font/Flexo-Heavy.woff') format('woff'),
+        url('../font/Flexo-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-LightIt.eot');
+    src: local('Flexo Light Italic'), local('Flexo-LightIt'),
+        url('../font/Flexo-LightIt.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-LightIt.woff2') format('woff2'),
+        url('../font/Flexo-LightIt.woff') format('woff'),
+        url('../font/Flexo-LightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-Thin.eot');
+    src: local('Flexo Thin'), local('Flexo-Thin'),
+        url('../font/Flexo-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-Thin.woff2') format('woff2'),
+        url('../font/Flexo-Thin.woff') format('woff'),
+        url('../font/Flexo-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-Medium.eot');
+    src: local('Flexo Medium'), local('Flexo-Medium'),
+        url('../font/Flexo-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-Medium.woff2') format('woff2'),
+        url('../font/Flexo-Medium.woff') format('woff'),
+        url('../font/Flexo-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-Black.eot');
+    src: local('Flexo Black'), local('Flexo-Black'),
+        url('../font/Flexo-Black.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-Black.woff2') format('woff2'),
+        url('../font/Flexo-Black.woff') format('woff'),
+        url('../font/Flexo-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-DemiIt.eot');
+    src: local('Flexo DemiBold Italic'), local('Flexo-DemiIt'),
+        url('../font/Flexo-DemiIt.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-DemiIt.woff2') format('woff2'),
+        url('../font/Flexo-DemiIt.woff') format('woff'),
+        url('../font/Flexo-DemiIt.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-BlackIt.eot');
+    src: local('Flexo Black Italic'), local('Flexo-BlackIt'),
+        url('../font/Flexo-BlackIt.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-BlackIt.woff2') format('woff2'),
+        url('../font/Flexo-BlackIt.woff') format('woff'),
+        url('../font/Flexo-BlackIt.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-MediumIt.eot');
+    src: local('Flexo Medium Italic'), local('Flexo-MediumIt'),
+        url('../font/Flexo-MediumIt.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-MediumIt.woff2') format('woff2'),
+        url('../font/Flexo-MediumIt.woff') format('woff'),
+        url('../font/Flexo-MediumIt.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-Bold.eot');
+    src: local('Flexo Bold'), local('Flexo-Bold'),
+        url('../font/Flexo-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-Bold.woff2') format('woff2'),
+        url('../font/Flexo-Bold.woff') format('woff'),
+        url('../font/Flexo-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-Regular.eot');
+    src: local('Flexo Regular'), local('Flexo-Regular'),
+        url('../font/Flexo-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-Regular.woff2') format('woff2'),
+        url('../font/Flexo-Regular.woff') format('woff'),
+        url('../font/Flexo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-BoldIt.eot');
+    src: local('Flexo Bold Italic'), local('Flexo-BoldIt'),
+        url('../font/Flexo-BoldIt.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-BoldIt.woff2') format('woff2'),
+        url('../font/Flexo-BoldIt.woff') format('woff'),
+        url('../font/Flexo-BoldIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Flexo';
+    src: url('../font/Flexo-Demi.eot');
+    src: local('Flexo DemiBold'), local('Flexo-Demi'),
+        url('../font/Flexo-Demi.eot?#iefix') format('embedded-opentype'),
+        url('../font/Flexo-Demi.woff2') format('woff2'),
+        url('../font/Flexo-Demi.woff') format('woff'),
+        url('../font/Flexo-Demi.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

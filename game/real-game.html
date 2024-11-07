@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/game.css">
+    <link rel="shortcut icon" href="../img/ICO.png" type="image/x-icon">
+    <title>Batalha Pokémon</title>
+</head>
+
+<body>
+
+    <div class="tittle" id="tittle-game">
+        <h1>Batalha Pokémon</h1>
+    </div>
+
+
+
+    <div class="container" id="battle-container">
+        <!-- Card do Player 1 -->
+        <div class="player-1-content">
+            <div class="pokemon-card" id="card-player">
+                <h2>Seu Pokémon (Player 1)</h2>
+                <div class="hp-lifes-infos">
+                    <span class="health-text">HP</span>
+                    <div class="health-bar">
+                        <div id="player-health" class="health"></div>
+                    </div>
+
+                    <div class="pokeballs" id="pokeballs-player1">
+                        <img id="pokeball1-player1" class="pokeball" src="../img/pokeball-life.png" alt="Pokébola">
+                        <img id="pokeball2-player1" class="pokeball" src="../img/pokeball-life.png" alt="Pokébola">
+                        <img id="pokeball3-player1" class="pokeball" src="../img/pokeball-life.png" alt="Pokébola">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="attacks-p1">
+            <h1>Ataques do Player 1:</h1>
+            <div id="moves"></div>
+        </div>
+
+
+
+
+        <!-- Pokémon do Player 1 -->
+        <div class="pokemon" id="player-pokemon">
+            <img id="player-sprite" class="sprite-player" alt="Pokémon P1">
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!--------------------------------------------------------------------------------------------------------->
+
+
+
+        <div class="attacks-p2">
+            <h1>Ataques do Player 2:</h1>
+            <div id="moves-bot"></div>
+        </div>
+
+
+
+        <!-- Card do Player 2 -->
+        <div class="pokemon-card" id="card-bot">
+            <h2>Seu Pokémon (Player 2)</h2>
+            <div class="hp-lifes-infos">
+                <span class="health-text">HP</span> <!-- Texto HP ao lado esquerdo da barra de vida -->
+                <div class="health-bar">
+                    <div id="bot-health" class="health"></div>
+                </div>
+                <div class="pokeballs" id="pokeballs-player2">
+                    <img id="pokeball1-player2" class="pokeball" src="../img/pokeball-life.png" alt="Pokébola">
+                    <img id="pokeball2-player2" class="pokeball" src="../img/pokeball-life.png" alt="Pokébola">
+                    <img id="pokeball3-player2" class="pokeball" src="../img/pokeball-life.png" alt="Pokébola">
+                </div>
+            </div>
+        </div>
+
+
+            <!--Pokémon do Player 2-->
+            <div class="pokemon" id="bot-pokemon">
+                <img id="bot-sprite" class="sprite-bot" alt="Pokémon Inimigo">
+            </div>
+    </div>
+
+
+
+    <div id="winner-container" style="display: none; text-align: center;">
+        <h1 id="winner-message"></h1>
+        <button id="back-button" style="
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #C82609;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        ">
+            Voltar para seleção de deck
+        </button>
+    </div>
+
+
+
+    <script src="../js/game.js">
+    </script>
+</body>
+
+
+</html>
