@@ -39,13 +39,19 @@ async function fetchPokemonDetails(id) {
     const pokemon = await response.json();
 
     const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
-    const tipoEmPortugues = traduzirTipo(pokemon.types[0].type.name);
+    const primaryType = traduzirTipo(pokemon.types[0].type.name);
+    const secondaryType = pokemon.types[1] ? traduzirTipo(pokemon.types[1].type.name) : null;
+
+    
+    
+    
 
     return {
         id: pokemon.id,
         name: pokemon.name,
         image: image,
-        type: tipoEmPortugues
+        primaryType: primaryType,
+        secondaryType: secondaryType,
     };
 }
 
@@ -53,12 +59,14 @@ function createPokemonCard(pokemon) {
     const pokemonCard = document.createElement('a');
     pokemonCard.classList.add('pokemon-card');
     pokemonCard.href = `pokemon.html?id=${pokemon.id}`;
+    const secondaryTypeHtml = pokemon.secondaryType ? `<p class="type type-${pokemon.secondaryType}">${pokemon.secondaryType}</p>` : '';
     pokemonCard.innerHTML = `
         <img src="${pokemon.image}" alt="${pokemon.name}">
         <p class="pokemon-id">Nº ${String(pokemon.id).padStart(4, '0')}</p>
         <h2>${pokemon.name}</h2>
         <div class="types">
-            <p class="type type-${pokemon.type}">${pokemon.type}</p>
+            <p class="type type-${pokemon.primaryType}">${pokemon.primaryType}</p>
+            ${secondaryTypeHtml}
         </div>
     `;
     return pokemonCard;

@@ -223,6 +223,10 @@ p {
     background-color: #777777;
     color: white;
 }
+.type-Voador {
+    background: linear-gradient(to bottom, #4bc6f4 50%, #c4c4c4 50%);
+    color: black;
+}
 
 .type-Venenoso {
     background-color: #A040A0;
@@ -237,6 +241,11 @@ p {
 .type-Água {
     background-color: #6890F0;
     color: white;
+}
+
+.type-Aço {
+    background-color: gray;
+    color: black;
 }
 
 .type-Elétrico {
