@@ -288,6 +288,11 @@ p {
     color: white;
 }
 
+.type-Sombrio {
+    background-color: #000;
+    color: white;
+}
+
 .type-Dragão {
     background: rgb(14, 0, 255);
     background: linear-gradient(180deg, rgba(14, 0, 255, 1) 0%, rgba(115, 0, 255, 1) 10%, rgba(255, 0, 0, 1) 100%);
